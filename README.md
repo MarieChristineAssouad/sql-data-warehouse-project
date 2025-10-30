@@ -7,7 +7,7 @@ This is my **first** end-to-end data analytics project. A milestone in my journe
 It demonstrates a complete data warehousing and analytics solution, from designing and building the data warehouse to generating actionable insights. Through this project, I applied real-world data engineering and analytics principles while following industry best practices and modern methodologies.
 
 ------------------------------------------------------------------------
-##💡 PROJECT REQUIREMENTS
+## 💡 PROJECT REQUIREMENTS
 
 ### Building the Data Warehouse (Data Engineering)
 
@@ -48,10 +48,10 @@ These analytical queries deliver key performance metrics and data-backed insight
 
 ------------------------------------------------------------------------
 
-##📜 *License*
+## 📜 *License*
 
 This project is licensed under the MIT License.
 
-##👋 *About Me*
+## 👋 *About Me*
 
 Hi! I’m **Marie Christine Assouad** (*Christine* for short). This project marks the start of my data analytics journey. With a background in mathematics and a unique chapter as the first female Navy lieutenant in my country, I’m now driven by a passion for uncovering insights through data and continuing my education to become a data analyst.

@@ -7,6 +7,12 @@ This is my **first** end-to-end data analytics project. A milestone in my journe
 It demonstrates a complete data warehousing and analytics solution, from designing and building the data warehouse to generating actionable insights. Through this project, I applied real-world data engineering and analytics principles while following industry best practices and modern methodologies.
 
 ------------------------------------------------------------------------
+## Data Architecture
+The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
+
+<img width="846" height="1727" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/99059a9b-ce33-4948-884b-f10dc2da6e08" />
+
+------------------------------------------------------------------------
 ## 💡 PROJECT REQUIREMENTS
 
 ### Building the Data Warehouse (Data Engineering)

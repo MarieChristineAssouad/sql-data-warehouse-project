@@ -7,14 +7,32 @@ This is my **first** end-to-end data analytics project. A milestone in my journe
 It demonstrates a complete data warehousing and analytics solution, from designing and building the data warehouse to generating actionable insights. Through this project, I applied real-world data engineering and analytics principles while following industry best practices and modern methodologies.
 
 ------------------------------------------------------------------------
-## Data Architecture
+## 🏗️ Data Architecture
 The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
 
 <img width="1383" height="665" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/30e59eda-519f-44a6-a720-84d6b29ddd0c" />
 
+1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
+2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
+3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
 
+------------------------------------------------------------------------
+## 📖 PROJECT OVERVIEW
+This project involves:
 
+1. Data Architecture: Designing a Modern Data Warehouse Using Medallion Architecture Bronze, Silver, and Gold layers.
+2. ETL Pipelines: Extracting, transforming, and loading data from source systems into the warehouse.
+3. Data Modeling: Developing fact and dimension tables optimized for analytical queries.
+4. Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
+   
+This repository is an excellent resource for professionals and students looking to showcase expertise in:
 
+  - SQL Development
+  - Data Architect
+  - Data Engineering
+  - ETL Pipeline Developer
+  - Data Modeling
+  - Data Analytics
 ------------------------------------------------------------------------
 ## 💡 PROJECT REQUIREMENTS
 

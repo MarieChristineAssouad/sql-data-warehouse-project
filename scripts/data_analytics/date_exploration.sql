@@ -1,3 +1,33 @@
+/*
+This SQL script performs an initial exploratory analysis on the sales and customer datasets to understand the time span of available data and the age distribution of customers. 
+It is useful for data validation, reporting readiness checks, and understanding dataset coverage before building dashboards or models.
+
+What This Script Does
+
+**1. Sales Date Range Analysis**
+
+*The script identifies:*
+
+- The first recorded order date
+- The last recorded order date
+- The total number of years covered by the sales data
+- The total number of months covered by the sales data
+
+This helps determine how much historical data is available for analysis and forecasting.
+
+**2. Customer Age Analysis**
+
+*The script extracts:*
+
+- The oldest customer birthdate and their calculated age
+- The youngest customer birthdate and their calculated age
+
+*This provides immediate insight into the age distribution of the customer base.*
+- Tables Used
+- gold_fact_sales
+- gold_dim_customers
+*/
+
 -- Find the date of the first and last order
 -- how many years of sales are available
 -- how many months of sales are available

@@ -1,27 +1,31 @@
 /* 
 ===============================================================
-                  SALES RANKINGS REPORT
+                        SALES RANKINGS REPORT
 ===============================================================
 
-This script focuses on simple and clear ranking analysis for a 
-retail sales dataset. I included both traditional and window 
-function approaches to highlight different ways to solve the 
-same type of analytical problem. The goal is to present clean, 
-readable queries that quickly surface performance insights.
+This script generates a clean set of analytical rankings focused 
+on product performance and customer ordering behavior. It includes 
+two different approaches for finding the top-performing products 
+so that both simple and window-function methods can be compared 
+side-by-side.
 
-Included in this report:
+Included rankings:
   - Top 5 products by total revenue (simple TOP approach)
   - Top 5 products by total revenue (ROW_NUMBER window function)
   - Bottom 5 products by total revenue
-  - Customers with the fewest orders placed
+  - Customers with the fewest orders
+
+Tables referenced:
+  - gold.fact_sales
+  - gold.dim_products
+  - gold.dim_customers
 */
 
-/*
+/* 
 ============================================================
-   TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE VERSION)
-============================================================ 
-*/
-SELECT 'TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE)  ' AS Header;
+       TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE VERSION)
+============================================================ */
+SELECT '=======  TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE)  =======' AS Header;
 
 SELECT TOP 5
       p.product_name,
@@ -34,14 +38,13 @@ ORDER BY total_revenue DESC;
 
 
 
-/* 
+/*
 ============================================================
-   TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER VERSION)
-============================================================ 
-*/
-SELECT 'TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER)' AS Header;
+     TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER VERSION)
+============================================================ */
+SELECT '=======  TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER)  =======' AS Header;
 
-SELECT 
+SELECT
       product_name,
       total_revenue,
       rank_products
@@ -54,17 +57,16 @@ FROM (
         LEFT JOIN gold.dim_products p
               ON p.product_key = f.product_key
         GROUP BY p.product_name
-     ) t
+     ) ranked
 WHERE rank_products <= 5;
 
 
 
-/*
+/* 
 ============================================================
          BOTTOM 5 PRODUCTS BY TOTAL REVENUE
-============================================================
-*/
-SELECT 'BOTTOM 5 PRODUCTS BY TOTAL REVENUE' AS Header;
+============================================================ */
+SELECT '=======  BOTTOM 5 PRODUCTS BY TOTAL REVENUE  =======' AS Header;
 
 SELECT TOP 5
       p.product_name,
@@ -79,10 +81,9 @@ ORDER BY total_revenue ASC;
 
 /* 
 ============================================================
-         CUSTOMERS WITH THE FEWEST ORDERS
-============================================================
-*/
-SELECT 'CUSTOMERS WITH FEWEST ORDERS' AS Header;
+           CUSTOMERS WITH THE FEWEST ORDERS
+============================================================ */
+SELECT '=======  CUSTOMERS WITH FEWEST ORDERS  =======' AS Header;
 
 SELECT TOP 3
       c.customer_key,

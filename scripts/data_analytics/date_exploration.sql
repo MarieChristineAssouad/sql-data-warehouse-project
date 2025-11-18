@@ -1,48 +1,70 @@
-/*
-This SQL script performs an initial exploratory analysis on the sales and customer datasets to understand the time span of available data and the age distribution of customers. 
-It is useful for data validation, reporting readiness checks, and understanding dataset coverage before building dashboards or models.
+/* 
+===============================================================
+                 DATE EXPLORATION ANALYSIS
+===============================================================
 
-What This Script Does
+This script performs an initial exploration of the order and 
+customer datasets to understand two key things:
 
-**1. Sales Date Range Analysis**
+1. The time span covered by the sales data  
+2. The age distribution of the customer base  
 
-*The script identifies:*
+I typically run this type of analysis early in a project 
+to validate data readiness, confirm historical coverage, and 
+understand what time periods are available before building 
+dashboards, forecasting models, or analytical reports.
 
-- The first recorded order date
-- The last recorded order date
-- The total number of years covered by the sales data
-- The total number of months covered by the sales data
 
-This helps determine how much historical data is available for analysis and forecasting.
+---------------------------------------------------------------
+            1. SALES DATE RANGE ANALYSIS
+---------------------------------------------------------------
 
-**2. Customer Age Analysis**
+This section identifies:
+  - The earliest order date in the dataset
+  - The most recent order date
+  - How many years of data are available
+  - How many months of data are available
 
-*The script extracts:*
+This helps determine the historical depth of the dataset and 
+whether the time coverage is sufficient for reporting or modeling.
+  
 
-- The oldest customer birthdate and their calculated age
-- The youngest customer birthdate and their calculated age
+---------------------------------------------------------------
+              2. CUSTOMER AGE ANALYSIS
+---------------------------------------------------------------
 
-*This provides immediate insight into the age distribution of the customer base.*
-- Tables Used
-- gold_fact_sales
-- gold_dim_customers
+This section identifies:
+  - The oldest customer's birthdate and their age
+  - The youngest customer's birthdate and their age
+
+This gives a quick overview of the age range represented in the 
+customer base, which is useful when building audience profiles 
+or customer segmentation models.
 */
 
--- Find the date of the first and last order
--- how many years of sales are available
--- how many months of sales are available
 
+/*
+============================================================
+               SALES DATE RANGE ANALYSIS
+============================================================
+*/
 SELECT
-  MIN(order_date) AS first_order_date,
-  MAX(order_date) AS last_order_date,
-  DATEDIFF(year, MIN (order_date),MAX(order_date)) AS order_range_year,
-  DATEDIFF(month, MIN (order_date),MAX(order_date)) AS order_range_month
+      MIN(order_date) AS first_order_date,
+      MAX(order_date) AS last_order_date,
+      DATEDIFF(YEAR,  MIN(order_date), MAX(order_date))  AS order_range_years,
+      DATEDIFF(MONTH, MIN(order_date), MAX(order_date))  AS order_range_months
 FROM gold.fact_sales;
 
---Find the youngest and oldest customers
+
+
+/* 
+============================================================
+                 CUSTOMER AGE ANALYSIS
+============================================================
+*/
 SELECT
-  MIN(birthdate) AS oldest_birthdate,
-  DATEDIFF( year, MIN(birthdate), GETDATE()) AS oldest_age,
-  MAX(birthdate) AS youngest_birthdate,
-  DATEDIFF( year, MAX(birthdate), GETDATE()) AS youngest_age
-FROM gold.dim_customers
+      MIN(birthdate) AS oldest_birthdate,
+      DATEDIFF(YEAR, MIN(birthdate), GETDATE()) AS oldest_age_years,
+      MAX(birthdate) AS youngest_birthdate,
+      DATEDIFF(YEAR, MAX(birthdate), GETDATE()) AS youngest_age_years
+FROM gold.dim_customers;

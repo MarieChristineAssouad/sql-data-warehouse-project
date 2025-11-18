@@ -1,36 +1,48 @@
-/*
-This SQL script performs basic exploratory analysis on customer and product dimension tables. 
-It helps identify the geographic diversity of customers and understand the structure of the product catalog before deeper analytics or modeling work.
+/* 
+===============================================================
+               DIMENSIONS EXPLORATION SCRIPT
+===============================================================
 
-What This Script Does
+This script provides a quick overview of key dimension tables 
+to understand customer distribution and the structure of the 
+product catalog. I typically run these checks early in a project 
+to confirm available attributes and validate the quality of 
+dimension data before building analytics or modeling pipelines.
 
-**1. Customer Geography Exploration**
+---------------------------------------------------------------
+          1. CUSTOMER GEOGRAPHY EXPLORATION
+---------------------------------------------------------------
 
-Retrieves all distinct countries where customers originate.
-
-Useful for understanding market reach, regional segmentation, and potential localization needs.
-
-
-**2. Product Category Exploration**
-
-Extracts all unique combinations of:
-
-- Category
-- Subcategory
-- Product name
-
-Shows the major divisions and structure of the product catalog.
-Results are ordered for easier inspection.
-- Tables Used
-- gold_dim_customers
-- gold_dim_products
+Returns all distinct customer countries.  
+This helps reveal geographic reach, regional patterns, and 
+potential segmentation opportunities.
 */
 
---	Explore all countries our customers come from
-SELECT DISTINCT country 
-FROM gold.dim_customers
+/* 
+============================================================
+               DISTINCT CUSTOMER COUNTRIES
+============================================================ */
+SELECT DISTINCT 
+    country
+FROM gold.dim_customers;
 
---Explore all categories "the major divisions'
-SELECT DISTINCT category, subcategory, product_name
+/* 
+============================================================
+         PRODUCT CATEGORY & SUBCATEGORY STRUCTURE
+============================================================ */
+/*
+This section extracts the unique combinations of:
+  - Category
+  - Subcategory
+  - Product name
+
+It gives a clear view of the major groupings in the product 
+catalog and is useful for verifying hierarchy consistency.
+*/
+
+SELECT DISTINCT 
+      category,
+      subcategory,
+      product_name
 FROM gold.dim_products
-ORDER BY 1,2,3
+ORDER BY category, subcategory, product_name;

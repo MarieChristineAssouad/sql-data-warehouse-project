@@ -1,76 +1,101 @@
 # Data Warehouse and Analytics Project
 
-📊 Welcome to my **Data Warehouse and Analytics Project!** 📊
+📊 Welcome to my *Data Warehouse and Analytics Project!*  
+This is my first end-to-end analytics project and a milestone in my journey toward becoming a *data analyst*.
 
-This is my **first** end-to-end data analytics project. A milestone in my journey to becoming a **data analyst**.
+It demonstrates a complete workflow—from designing and building a SQL-based data warehouse to running analytical SQL queries and generating business insights.
 
-It demonstrates a complete data warehousing and analytics solution, from designing and building the data warehouse to generating actionable insights. Through this project, I applied real-world data engineering and analytics principles while following industry best practices and modern methodologies.
+---
 
-------------------------------------------------------------------------
 ## 🏗️ Data Architecture
-The data architecture for this project follows Medallion Architecture Bronze, Silver, and Gold layers:
+
+This warehouse follows the *Medallion Architecture* (Bronze → Silver → Gold):
 
 <img width="1383" height="665" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/30e59eda-519f-44a6-a720-84d6b29ddd0c" />
 
-1. **Bronze Layer**: Stores raw data as-is from the source systems. Data is ingested from CSV Files into SQL Server Database.
-2. **Silver Layer**: This layer includes data cleansing, standardization, and normalization processes to prepare data for analysis.
-3. **Gold Layer**: Houses business-ready data modeled into a star schema required for reporting and analytics.
+1. *Bronze Layer*  
+   Raw CSV data ingested into SQL Server.
+
+2. *Silver Layer*  
+   Cleaned and standardized using functions like TRIM(), NULLIF(), and COALESCE().
+
+3. *Gold Layer*  
+   Business-ready fact & dimension tables modeled into a star schema.
 
 ------------------------------------------------------------------------
-## 📖 PROJECT OVERVIEW
-This project involves:
+## 📖 Project Overview
 
-1. Data Architecture: Designing a Modern Data Warehouse Using Medallion Architecture Bronze, Silver, and Gold layers.
-2. ETL Pipelines: Extracting, transforming, and loading data from source systems into the warehouse.
-3. Data Modeling: Developing fact and dimension tables optimized for analytical queries.
-4. Analytics & Reporting: Creating SQL-based reports and dashboards for actionable insights.
-   
-This repository is an excellent resource for professionals and students looking to showcase expertise in:
+This project includes:
 
-  - SQL Development
-  - Data Architect
-  - Data Engineering
-  - ETL Pipeline Developer
-  - Data Modeling
-  - Data Analytics
+- *Data Architecture* – Designing and implementing a SQL data warehouse  
+- *ETL Pipelines* – Ingesting and transforming CSV data  
+- *Data Modeling* – Creating fact/dim tables for analytics  
+- *Business Analytics* – Generating insights with SQL  
+
+It demonstrates skills across:
+
+- SQL Development  
+- Data Engineering  
+- Data Modeling  
+- Data Analytics
 ------------------------------------------------------------------------
-## 💡 PROJECT REQUIREMENTS
+## 💡 Project Requirements
 
-### Building the Data Warehouse (Data Engineering)
+### 🎯 Objective  
+Build a modern data warehouse in SQL Server to consolidate sales data and support analytical reporting.
 
-#### *Objective*
+### 🔧 Specifications  
+- *Data Sources:* Two CSV datasets from ERP and CRM systems  
+- *Data Quality:* Clean and standardize values using SQL functions  
+- *Integration:* Merge datasets using JOINs, CTEs, UNIONs  
+- *Scope:* Focus on a single snapshot (no historical SCD needed)  
+- *Documentation:* Provide clear modeling & analytics documentation  
 
-Design and implement a modern data warehouse using SQL Server, consolidating sales data from multiple systems to support analytical reporting and data-driven decision-making.
-
-#### *Specifications*
-
-- **Data Sources**: Ingest data from two core systems (ERP and CRM) provided as *CSV* files.
-
-- **Data Quality**: Apply data-cleaning logic using SQL functions such as TRIM(), NULLIF(), and COALESCE() to handle missing or inconsistent values.
-
-- **Integration**: Use JOINs, CTEs, and UNIONs to merge both data sources into a single data model optimized for analytical queries.
-
-- **Scope**: Focus on the latest dataset snapshot for current insights; historization and change-tracking not required.
-
-- **Documentation**: Provide clear documentation of the data model to support both business *stakeholders* and *analytics teams*.
+This requirement set mirrors real-world expectations for junior data engineering and analytics roles.
 
 
 ------------------------------------------------------------------------
 
-### BI: Analytics & Reporting (Data Analytics)
+## 📊 Data Analysis
 
-#### *Objective*
+The project includes several exploratory and analytical SQL scripts.
 
-Develop SQL-based analytics and business intelligence reports to uncover actionable insights on:
+### 🔹 Magnitude Analysis  
+Breaks down the business across key dimensions:
+- Customers by country and gender  
+- Products and categories  
+- Revenue by category  
+- Revenue by customer  
 
-- **Customer Behavior**: identify retention patterns, purchase frequency, and churn indicators using window functions like RANK() and LAG().
+### 🔹 Ranking Analysis  
+Identifies performance insights:
+- Top 5 products (simple + window function)  
+- Bottom 5 products  
+- Customers with the fewest orders  
 
-- **Product Performance**: calculate KPIs such as revenue contribution and profitability by product category.
+### 🔹 KPI & Measure Exploration  
+Generates a consolidated KPI table with:
+- Total sales  
+- Total quantity sold  
+- Average price  
+- Total orders  
+- Total products & customers  
 
-- **Sales Trends**: analyze growth over time using date aggregation and rolling averages.
+### 🔹 Dimensional Exploration  
+Validates dimension structure:
+- Categories & subcategories  
+- Customer geography  
+- Column metadata  
 
+### 🔹 Date Exploration  
+Evaluates dataset coverage:
+- First & last order dates  
+- Months/years of data  
+- Youngest & oldest customers  
 
-These analytical queries deliver key performance metrics and data-backed insights to support strategic decision-making across teams.
+These analyses reflect real workflows used by analysts and BI teams.
+
+---
 
 ------------------------------------------------------------------------
 

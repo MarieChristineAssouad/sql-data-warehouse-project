@@ -1,27 +1,47 @@
-/*
-This SQL script provides a quick overview of the database structure by querying metadata from the INFORMATION_SCHEMA views.
-It is useful during the early stages of data discovery, modeling, or when onboarding to a new database.
+/* 
+===============================================================
+                     DATABASE EXPLORATION SCRIPT
+===============================================================
 
-**What This Script Does**
+This script provides a quick, simple way to explore the structure 
+of a database by querying metadata from the INFORMATION_SCHEMA 
+views. I use this as a first step whenever I start working with 
+a new database, validating a data model, or preparing analytics 
+queries. It helps me understand what objects exist and how they 
+are structured.
 
-1. List All Objects in the Database
-- Queries INFORMATION_SCHEMA.TABLES to return all tables and views.
-- Helps identify available datasets and understand the overall schema layout.
+What this script does:
 
-2. Inspect Columns for a Specific Table
-- Queries INFORMATION_SCHEMA.COLUMNS to return all columns for a specified table (in this case, dim_customers).
-- Provides column names, data types, and other structural metadata.
+1. Lists all tables and views in the database
+   - Uses INFORMATION_SCHEMA.TABLES
+   - Helps identify available datasets and the overall layout
 
-Useful for understanding table structure before writing transformations, models, or analytics queries.
+2. Inspects the column structure of a specific table
+   - Uses INFORMATION_SCHEMA.COLUMNS
+   - Returns column names, data types, and other metadata
+
+This is useful for initial data discovery before writing 
+transformations, models, or analytical queries.
 */
 
---	Explore all objects in the database
-SELECT 
-*
-FROM INFORMATION_SCHEMA.TABLES
 
--- Explore all columns in the database
-SELECT
-* 
+/*
+============================================================
+       LIST ALL TABLES AND VIEWS IN THE DATABASE
+============================================================ 
+*/
+SELECT 
+    *
+FROM INFORMATION_SCHEMA.TABLES;
+
+
+
+/* 
+============================================================
+       INSPECT COLUMN METADATA FOR A SPECIFIC TABLE
+============================================================
+*/
+SELECT 
+    *
 FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = 'dim_customers'
+WHERE TABLE_NAME = 'dim_customers';

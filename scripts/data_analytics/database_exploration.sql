@@ -1,7 +1,7 @@
 /* 
-===============================================================
+_______________________________________________________________
                      DATABASE EXPLORATION SCRIPT
-===============================================================
+_______________________________________________________________
 
 This script provides a quick, simple way to explore the structure 
 of a database by querying metadata from the INFORMATION_SCHEMA 
@@ -24,23 +24,14 @@ This is useful for initial data discovery before writing
 transformations, models, or analytical queries.
 */
 
+--LIST ALL TABLES AND VIEWS IN THE DATABASE
 
-/*
-============================================================
-       LIST ALL TABLES AND VIEWS IN THE DATABASE
-============================================================ 
-*/
 SELECT 
     *
 FROM INFORMATION_SCHEMA.TABLES;
 
+-- INSPECT COLUMN METADATA FOR A SPECIFIC TABLE
 
-
-/* 
-============================================================
-       INSPECT COLUMN METADATA FOR A SPECIFIC TABLE
-============================================================
-*/
 SELECT 
     *
 FROM INFORMATION_SCHEMA.COLUMNS

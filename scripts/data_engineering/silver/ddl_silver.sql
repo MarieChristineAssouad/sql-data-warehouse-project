@@ -1,7 +1,7 @@
 /*
-===============================================================================
-                      DDL Script: Create Silver Tables
-===============================================================================
+_______________________________________________________________
+                 DDL Script: Create Silver Tables
+_______________________________________________________________
 Script Purpose:
   This script recreates the tables in the 'silver' schema by dropping any existing ones.
   Execute it to redefine the DDL structure of the 'bronze' tables.

@@ -1,7 +1,7 @@
 /* 
-======================================================================
+______________________________________________________________________
         YEARLY PRODUCT PERFORMANCE ANALYSIS (AVG + YoY COMPARISON)
-======================================================================
+______________________________________________________________________
 
 This query evaluates yearly product performance using two comparisons:
 
@@ -20,10 +20,7 @@ products that consistently overperform or underperform.
 */
 
 
-/* 
-============================
-   YEARLY SALES PER PRODUCT
-=============================*/
+-- YEARLY SALES PER PRODUCT
 WITH yearly_product_sales AS (
     SELECT
           YEAR(f.order_date)        AS order_year,
@@ -38,11 +35,7 @@ WITH yearly_product_sales AS (
           p.product_name
 )
 
-
-/* 
-============================
-   FINAL ANALYSIS
-============================ */
+-- FINAL ANALYSIS
 SELECT 
       order_year,
       product_name,

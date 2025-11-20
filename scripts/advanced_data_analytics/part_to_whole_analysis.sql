@@ -1,7 +1,7 @@
 /* 
-===============================================================
+_______________________________________________________________
           CATEGORY SALES CONTRIBUTION ANALYSIS
-===============================================================
+_______________________________________________________________
 
 This query identifies which product categories generate the most
 sales and calculates each category's percentage contribution to 

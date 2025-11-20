@@ -1,19 +1,13 @@
 /* 
-===============================================================
+_______________________________________________________________
                  DATE EXPLORATION ANALYSIS
-===============================================================
+_______________________________________________________________
 
 This script performs an initial exploration of the order and 
 customer datasets to understand two key things:
 
 1. The time span covered by the sales data  
 2. The age distribution of the customer base  
-
-I typically run this type of analysis early in a project 
-to validate data readiness, confirm historical coverage, and 
-understand what time periods are available before building 
-dashboards, forecasting models, or analytical reports.
-
 
 ---------------------------------------------------------------
             1. SALES DATE RANGE ANALYSIS
@@ -43,11 +37,8 @@ or customer segmentation models.
 */
 
 
-/*
-============================================================
-               SALES DATE RANGE ANALYSIS
-============================================================
-*/
+-- SALES DATE RANGE ANALYSIS
+
 SELECT
       MIN(order_date) AS first_order_date,
       MAX(order_date) AS last_order_date,
@@ -55,13 +46,8 @@ SELECT
       DATEDIFF(MONTH, MIN(order_date), MAX(order_date))  AS order_range_months
 FROM gold.fact_sales;
 
+--CUSTOMER AGE ANALYSIS
 
-
-/* 
-============================================================
-                 CUSTOMER AGE ANALYSIS
-============================================================
-*/
 SELECT
       MIN(birthdate) AS oldest_birthdate,
       DATEDIFF(YEAR, MIN(birthdate), GETDATE()) AS oldest_age_years,

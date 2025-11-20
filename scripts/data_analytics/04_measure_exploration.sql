@@ -28,36 +28,36 @@ _______________________________________________________________
 _______________________________________________________________
 */
 SELECT 
-      'Total Sales'          AS measure_name,
-      SUM(sales_amount)      AS measure_value
+      'Total Sales'     AS measure_name,
+      SUM(sales_amount) AS measure_value
 FROM gold.fact_sales
 
 UNION ALL
 
 SELECT 
-      'Total Quantity'       AS measure_name,
-      SUM(quantity)          AS measure_value
+      'Total Quantity' AS measure_name,
+      SUM(quantity)    AS measure_value
 FROM gold.fact_sales
 
 UNION ALL
 
 SELECT 
-      'Average Price'        AS measure_name,
-      AVG(price)             AS measure_value
+      'Average Price' AS measure_name,
+      AVG(price)      AS measure_value
 FROM gold.fact_sales
 
 UNION ALL
 
 SELECT 
-      'Total Nr. Orders'     AS measure_name,
+      'Total Nr. Orders' AS measure_name,
       COUNT(DISTINCT order_number) AS measure_value
 FROM gold.fact_sales
 
 UNION ALL
 
 SELECT 
-      'Total Nr. Products'   AS measure_name,
-      COUNT(product_name)    AS measure_value
+      'Total Nr. Products'  AS measure_name,
+      COUNT(product_name)   AS measure_value
 FROM gold.dim_products
 
 UNION ALL

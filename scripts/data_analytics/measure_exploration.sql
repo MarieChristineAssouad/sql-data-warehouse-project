@@ -1,7 +1,7 @@
 /* 
-===============================================================
+_______________________________________________________________
                      MEASURE EXPLORATION SCRIPT
-===============================================================
+_______________________________________________________________
 
 This script builds a small KPI table that consolidates several 
 high level performance metrics for a retail or e-commerce dataset. 
@@ -23,9 +23,10 @@ with the following columns:
   - measure_value
 */
 /* 
-============================================================
+_______________________________________________________________
                CONSOLIDATED KPI OUTPUT
-============================================================ */
+_______________________________________________________________
+*/
 SELECT 
       'Total Sales'          AS measure_name,
       SUM(sales_amount)      AS measure_value

@@ -1,7 +1,7 @@
 /* 
-===============================================================
+_______________________________________________________________
                         SALES RANKINGS REPORT
-===============================================================
+_______________________________________________________________
 
 This script generates a clean set of analytical rankings focused 
 on product performance and customer ordering behavior. It includes 
@@ -22,10 +22,11 @@ Tables referenced:
 */
 
 /* 
-============================================================
+_______________________________________________________________
        TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE VERSION)
-============================================================ */
-SELECT '=======  TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE)  =======' AS Header;
+_______________________________________________________________ 
+*/
+SELECT 'TOP 5 PRODUCTS BY TOTAL REVENUE (SIMPLE)' AS Header;
 
 SELECT TOP 5
       p.product_name,
@@ -39,10 +40,11 @@ ORDER BY total_revenue DESC;
 
 
 /*
-============================================================
+_______________________________________________________________
      TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER VERSION)
-============================================================ */
-SELECT '=======  TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER)  =======' AS Header;
+_______________________________________________________________
+*/
+SELECT 'TOP 5 PRODUCTS BY TOTAL REVENUE (ROW_NUMBER)' AS Header;
 
 SELECT
       product_name,

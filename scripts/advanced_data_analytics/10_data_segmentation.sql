@@ -1,6 +1,6 @@
 /* 
 _______________________________________________________________
-                CUSTOMER SEGMENTATION BY VALUE
+                CUSTOMER's DATA SEGMENTATION BY VALUE
 _______________________________________________________________
 
 This query:
